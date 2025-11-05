@@ -1,0 +1,1227 @@
+---
+encoding: "UTF-8"
+title: "Oficina 'Introdução à análise exploratória de dados em ambiente R'"
+
+subtitle: "XI Seminário de Recursos Naturais | PRONAT UFRR | 2025"
+
+date: "05 Nov 2025"
+
+format:
+  live-html:
+    toc: true
+    theme: 
+      light: cerulean
+      dark: solar
+
+resources:
+  - penguins.csv
+  - penguins.xlsx
+
+engine: knitr
+
+webr:
+  packages:
+    - dplyr
+    - palmerpenguins
+    - ggplot2
+  repos:
+    - https://r-lib.r-universe.dev
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+::: {.callout-note}
+## Dados da oficina
+
+Baixe aqui:
+
+* [penguins.csv](https://drive.google.com/file/d/1XjPPL6H0GHlY5DOWd3d8xbjoxYGZOC6Q/view?usp=drive_link)
+
+* [penguins.xlsx](https://docs.google.com/spreadsheets/d/1L_WgbuCYN_4dS4Jcol3_HptVKyRDTKNC/edit?usp=drive_link&ouid=107115676585048825053&rtpof=true&sd=true)
+
+:::
+
+<!-- ::: {.callout-note} -->
+<!-- ## Informes -->
+
+<!-- Última atualização: `r lubridate::today()`.   -->
+
+<!-- Código fonte: <https://github.com/ricoperdiz/2025_analiseDadosR_XISemRecNat>.   -->
+
+<!-- ### Adições -->
+
+<!-- Não se aplica.   -->
+
+<!-- ::: -->
+
+## Apresentação da oficina
+
+O objetivo desta oficina é introduzir o uso da linguagem **R** e do ambiente **RStudio** para análise exploratória de dados, com foco em aplicações nas **Ciências ambientais**.  
+Ao final desta oficina, você terá os conhecimentos básicos para importar, manipular, agrupar e contar, e visualizar dados simples em R.  
+
+Durante as oito horas de oficina, apresentaremos resumidamente comandos básicos em R que cobrem quase todo o ciclo da análise de dados (@fig-analisedados).
+Nosso intuito é demonstrar o poder do R enquanto ferramenta para a análise de dados.
+Oferecemos então uma introdução à importação de dados, checagem e transformação de dados, manipulação de dados, agrupamento e sumarização de dados, e, por fim, visualização de dados.  
+
+
+```{r}
+#| label: fig-analisedados
+#| fig-cap: "Ciclo da análise de dados. Neste  curso, não abordaremos a modelagem de dados. Fonte: Curso-R, disponível em <https://livro.curso-r.com/assets/img/manipulacao/ciclo-ciencia-de-dados.png>."
+#| echo: false
+knitr::include_graphics(
+  "https://livro.curso-r.com/assets/img/manipulacao/ciclo-ciencia-de-dados.png"
+)
+```
+
+---
+
+## O que é o R?
+
+**R** é uma linguagem de programação e um ambiente de software livre voltado à **análise estatística**, **exploração** e **visualização de dados** [@IhakaGentleman1996].  
+Criado por **Ross Ihaka** e **Robert Gentleman**, o R é amplamente utilizado por estatísticos, cientistas de dados e pesquisadores para **organizar**, **analisar** e **interpretar** grandes volumes de informação de forma eficiente e reprodutível [@WickhamGrolemund2017].  
+
+---
+
+## Por que **R**?
+
+{{< revealjs "por-que-r.html" >}}
+
+------------------------------------------------------------------------
+
+## O IDE RStudio
+
+O **RStudio** é um [ambiente de desenvolvimento integrado (IDE)](https://intror.netlify.app/caso-voc%C3%AA-possua-um-computador.html#instale-um-ambiente-de-desenvolvimento-integrado---ide), que facilita o uso do R.
+Ele é dividido em quatro painéis principais:
+
+1. **Script (Editor)** – onde escrevemos e salvamos códigos;  
+2. **Console** – onde os comandos são executados;  
+3. **Ambiente** – mostra objetos carregados na sessão;  
+4. **Arquivos, plots e pacotes** – onde gerenciamos pastas, gráficos e extensões.
+
+::: callout-note
+**Dica:**  
+Use o atalho `Ctrl + Enter` (ou `Cmd + Enter` no macOS) para executar uma linha de código selecionada.
+:::
+
+---
+
+## 🔰 Básico em R
+
+### Primeiros comandos
+
+O R pode ser usado como uma **calculadora interativa**.  
+Experimente no console:
+
+```{webr}
+# Operações matemáticas simples
+2 + 3
+10 - 4
+5 * 8
+12 / 3
+2^5
+sqrt(49)
+log(10)
+```
+
+---
+
+### Objetos e atribuição
+
+No R, os dados são armazenados em **objetos**.
+Usamos `<-` (ou `=`) para atribuir valores.
+
+```{webr}
+# Criando objetos
+altura <- 1.75
+peso <- 68
+
+# Cálculo com objetos
+imc <- peso / (altura^2)
+imc
+```
+
+::: callout-note
+**Boa prática:**
+Use nomes curtos e descritivos (sem acentos ou espaços), como `dados_plantas` ou `taxa_crescimento`.  
+:::
+
+Podemos fazer operações matemáticas e guardar resultado das operações em objetos.  
+
+```{webr}
+# Operações básicas
+soma <- x + y
+soma
+```
+
+```{webr}
+subtracao <- x - y
+subtracao
+```
+
+
+```{webr}
+multiplicacao <- x * y
+multiplicacao
+```
+
+```{webr}
+divisao <- x/y
+divisao
+```
+
+### Ver o conteúdo de um objeto
+
+Para ver o conteúdo de um objeto, basta digitar seu nome e rodar o código.
+Por exemplo, para ver a soma, que está no objeto `soma`, fazemos assim:
+
+```{webr}
+soma
+```
+
+
+### Concatenando elementos com a função `c()`
+
+Podemos concatenar elementos utilizando a função `c()`.
+Chamamos esse conjunto de elementos de vetores:
+
+```{webr}
+# Vetores: coleções de elementos do mesmo tipo
+numeros <- c(1, 2, 3, 4, 5)
+numeros
+letras <- c("a", "b", "c")
+letras
+```
+
+Acima, criamos os vetores `numeros` e `letras`.
+Reparem que em letras adicionamos letras do alfabeto entre aspas `""`.
+*Devemos fazer isso toda vez que desejarmos __guardar texto__ em um objeto*.  
+
+---
+
+### Tipos de dados e vetores
+
+Os vetores são as estruturas básicas do R.
+Podem conter **números**, **caracteres** ou **valores lógicos**.
+
+```{webr}
+# Vetores numéricos
+comprimento <- c(12.4, 15.2, 13.5, 16.1)
+
+# Vetores de texto
+especies <- c("Protium", "Bursera", "Dacryodes", "Trattinnickia")
+
+# Vetores lógicos
+amostrado <- c(TRUE, FALSE, TRUE, TRUE)
+
+# Consultando estrutura
+str(especies)
+length(comprimento)
+```
+
+---
+
+### Estruturas de dados em R
+
+| Estrutura  | Descrição                              | Exemplo        |
+| ---------- | -------------------------------------- | -------------- |
+| Vetor      | Sequência unidimensional               | `c(1,2,3)`     |
+| Matriz     | Tabela numérica bidimensional          | `matrix()`     |
+| Data frame | Tabela com colunas de tipos diferentes | `data.frame()` |
+| Lista      | Conjunto heterogêneo de objetos        | `list()`       |
+
+
+Podemos criar tabelas, por exemplo.
+No R, chamamos tabelas de `data.frame`.
+Cada coluna precisa ser um vetor (criado com a função `c()`). A função `data.frame()` junta esses vetores, criando uma tabela.  
+
+Em nosso exemplo exposto abaixo, os argumentos `ID`, `Nome` e `Idade` representam os nomes das colunas de nossa tabela, guardada no objeto `dados_exemplo`:
+
+```{webr}
+# `dataframe`s: tabelas com linhas e colunas
+dados_exemplo <- 
+  data.frame(
+  ID = c(1, 2, 3),
+  Nome = c("João", "Maria", "Pedro"),
+  Idade = c(25, 30, 22)
+)
+
+# Visualizando o `dataframe`
+dados_exemplo
+```
+
+Podemos ver o conteúdo de `dados_exemplo` também simplesmente executando o nome do objeto:
+
+```{webr}
+dados_exemplo
+```
+
+### Exemplo 2 de criação de um *data.frame*:
+
+```{webr}
+dados <- data.frame(
+  especie = especies,
+  comprimento = comprimento,
+  amostrado = amostrado
+)
+
+dados
+```
+
+---
+
+### Acessando elementos
+
+Podemos acessar elementos com colchetes `[]` ou pelo nome da coluna.
+
+```{webr}
+# Primeira linha
+dados[1, ]
+
+# Segunda coluna
+dados[, 2]
+
+# Coluna 'especie'
+dados$especie
+
+# Selecionando a coluna pelo nome utilizando a função select() do pacote `dplyr`
+select(dados, especie)
+```
+
+---
+
+### Pacotes e funções
+
+O R possui milhares de **pacotes** que estendem suas funcionalidades.
+Pacotes em R são conjuntos de funções ou conjuntos de dados.
+Utilizamos a função `install.packages()` para instalar esses pacotes.
+Neste curso, faremos uso dos pacotes `dplyr` [@dplyr], `palmerpenguins` [@Horstetal2020], `readxl` [@readxl] e `ggplot2` [@Wickham2016].
+Primeiro, devemos instalar os pacotes.
+Em seguida, carregamos os pacotes de interesse para nossos objetivos.  
+
+::: {.callout-important}
+#### `install.packages()` VS. `library()`
+
+Instalamos pacotes R **uma vez apenas**, para cada versão de R que tivermos instalado no computador.
+Por outro lado, a cada sessão nova de R, devemos carregar os pacotes utilizando a função `library()`, de forma que as funções dos pacotes estejam disponíveis na sessão.  
+
+A função `install.packages()` é como instalar um aplicativo no seu celular: você faz uma vez. O library() é como abrir esse aplicativo para usá-lo: você precisa fazer isso em cada nova sessão que iniciar.
+:::
+
+O pacote `dplyr` inaugurou uma nova sintaxe em R (ver a postagem [O que é o Tidyverse](https://www.ricardoperdiz.com/blog/2020-04-tidyverse/) para mais informações), que permite a manipulação de dados tabulares de maneira mais prática e com mais clareza ao usuário.  
+
+O `ggplot2` [@Wickham2016] é a ferramenta de visualização mais popular em R e será utilizada neste minicurso.
+Ele segue uma "gramática de gráficos", em que você constrói o gráfico em camadas.  
+
+O pacote `readxl` [@readxl] é usado para importar planilhas `.xls` e `.xlsx` diretamente no R, sem precisar ter programas como o *Excel/LibreOffice Calc* instalados e sem depender de outras ferramentas externas.
+É amplamente utilizado para trazer dados tabulares para dentro do R de forma rápida e prática, preservando nomes de colunas e tipos de variáveis.  
+
+Por sua vez, o pacote `palmerpenguins` [@Horstetal2020] oferece um conjunto de dados referente à morfologia de três espécies de pinguins que ocorrem no [arquipélago de Palmer](https://en.wikipedia.org/wiki/Palmer_Archipelago) no noroeste da [península Antártica](https://pt.wikipedia.org/wiki/Pen%C3%ADnsula_Ant%C3%A1rtica).  
+
+
+```{r}
+#| eval: false
+#| echo: true
+# Instalar (executar uma única vez)
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+install.packages("readxl")
+```
+
+Agora carregaremos o pacote por meio da função `library()`.
+Devemos inserir o nome do pacote que queremos carregar entre os parênteses, com ou sem aspas.  
+
+```{r}
+#| eval: false
+#| echo: true
+# Carregar
+library("dplyr")
+library("ggplot2")
+library("palmerpenguins")
+library("readxl")
+```
+
+Funções têm o formato `nome(argumentos)`.  
+
+```{webr}
+mean(dados$comprimento)
+sd(dados$comprimento)
+summary(dados$comprimento)
+```
+
+---
+
+## 🧳 Importando dados 🎲
+
+<!-- Importação → 15 min -->
+
+Para a análise de dados, precisamos carregar __dados__ 😄😄😄.
+Existem diversas maneiras de importar dados ao R.
+Importaremos um arquivo CSV referente ao pacote R `palmerpenguins` [@Horstetal2020].  
+
+```{webr}
+pinguins <- 
+  read.table("penguins.csv", sep = "\t", dec = ".", header = TRUE)
+pinguins
+```
+
+
+Podemos ler arquivos `xlsx` utilizando a função `read_excel()` do pacote `readxl` [@readxl]:
+
+```{webr}
+pinguins <- 
+  read_excel("penguins.xlsx")
+pinguins
+```
+
+
+### Resultado da leitura de dados usando `read.table()`
+
+
+Quando executamos os dados lidos pela função `read.table()`, podemos acabar vendo muita coisa, o que pode acabar incomodando.
+Desta forma, pode-se utilizar a função `head()` para ver apenas as primeiras seis linhas da tabela.  
+
+
+```{r}
+#| include: false
+#| eval: false
+pinguins <- read.table(
+  "penguins.csv",
+  sep = "\t",
+  dec = ".",
+  header = TRUE
+)
+head(pinguins)
+```
+
+
+::: {.callout-tip}
+#### Diferença entre `read.csv()` e `read.table()`
+
+O R possui diferentes funções para ler tabelas:
+
++ `read.csv()` é uma forma simplificada de read.table() já configurada para ler arquivos separados por vírgula (,) e com ponto (.) como separador decimal.
+
++ `read.table()` é mais flexível, permitindo ajustar separador (`sep`) e símbolo decimal (`dec`).  
+:::
+
+
+### Inspeção básica - `head()`, `tail()`, `str()`, `summary()` e `glimpse()` {#sec-inspecaobasica}
+
+<!-- inspeção de dados → 25 min -->
+
+Agora que os dados foram lidos, vamos inspecioná-los.
+Para ver as primeiras linhas/valores de um objeto, utilizamos a função `head()`:
+
+```{webr}
+# Inspecionando os dados
+head(pinguins)   # Primeiras 6 linhas
+```
+
+Para observar os últimos valores, utilizamos a função `tail()`:
+
+```{webr}
+tail(pinguins)   # Últimas 6 linhas
+```
+
+Podemos utilizar a função `dplyr::glimpse()` para ver a estrutura dos dados:
+
+```{webr}
+glimpse(pinguins) # Uma visão geral dos dados
+```
+
+Além de `dplyr::glimpse()`, duas funções muito úteis para inspecionar dados são:
+
++ `str()`: mostra a estrutura do objeto.
+
++ `summary():` gera um resumo estatístico das variáveis numéricas e uma contagem das categorias.  
+
+```{webr}
+str(pinguins)
+summary(pinguins)
+```
+
+
+------------------------------------------------------------------------
+
+
+## 🧹 Limpeza e checagem de dados 👀
+
+Dados do mundo real raramente são perfeitos.
+Precisamos limpá-los.  
+
++ **Dados ausentes (NA):** Verificando e lidando com valores `NA`.  
+
++ **Tipos de colunas:** Garantindo que cada coluna tenha o tipo de dado correto (numérico, texto, etc.).  
+
+### Dados ausentes
+
+```{webr}
+# Identificando valores ausentes
+sum(is.na(pinguins))
+```
+
+### Removendo linhas com NA
+
+Para remover todas as linhas que apresentarem valoes ausentes, podemos utilizar a função `na.omit()`.  
+
+```{webr}
+dados_sem_na <- na.omit(pinguins)
+```
+
+Agora checamos os dados após a remoção das linhas com dados ausentes:
+
+```{webr}
+glimpse(dados_sem_na)
+```
+
+### Renomear colunas
+
+Podemos renomear colunas utilizando a função `dplyr::rename()`:
+
+```{webr}
+# Renomeando colunas para nomes em portugues
+pinguins_renomeados <- 
+  rename(
+    pinguins,
+    barbatana_comprimento_mm = flipper_length_mm,
+    massa_corporal_g = body_mass_g
+  )
+```
+
+Veja agora o resultado da renomeação das colunas:
+
+```{webr}
+glimpse(pinguins_renomeados)
+```
+
+### Transformação de tipos de dados/colunas
+
+Às vezes, uma coluna que deveria ser numérica (por exemplo, com números) é lida como um texto.
+Isso pode acontecer quando a coluna tem algum valor não numérico, como um caractere especial ou um espaço.  
+
+Para resolver, podemos converter o tipo de dado.
+Por exemplo, vamos transformar a coluna `body_mass_g` para o tipo numérico usando a função `as.numeric()`:
+
+```{webr}
+# Transformando uma coluna para numérica
+pinguins$body_mass_g <- as.numeric(pinguins$body_mass_g)
+glimpse(pinguins) # Agora veja que a coluna está como 'numérica'
+```
+
+::: {.callout-tip}
+### Ajuda para entender quais são os argumentos de uma função
+
+O R possui uma função, chamada ajuda "*help*", que deve ser utilizada para obtermos informação sobre o que uma função executa.
+Para obter essa ajuda, devemos pegar a função e executá-la da seguinte forma:
+
+```{r}
+#| eval: false
+#| echo: true
+?read.table
+?na.omit
+?c
+```
+
+Ao utilizar o `?` junto ao nome de uma função, sem os parênteses, uma janela se abre contendo várias informações úteis referentes ao que aquela determinada função faz. Teste aí!
+:::
+
+## 🧩 Exercícios Práticos — Parte I
+
+### 1. Criando e manipulando vetores
+
+1. Crie um vetor chamado `alturas` com os valores `1.60`, `1.72`, `1.80`, `1.65` e `1.75`.
+2. Calcule a **média** das alturas utilizando a função `mean()`.
+3. Calcule o **desvio-padrão** com `sd()`.
+4. Some `0.05` a cada valor do vetor, simulando um aumento de 5 cm, e guarde o resultado em um novo vetor chamado `alturas_ajustadas`.
+5. Compare os dois vetores (`alturas` e `alturas_ajustadas`) no console.
+
+```{webr}
+alturas
+```
+
+---
+
+### 2. Trabalhando com vetores de texto e lógicos
+
+1. Crie um vetor chamado `nomes` com os valores `"Ana"`, `"Bruno"`, `"Carlos"`, `"Daniela"`, `"Eduardo"`.
+2. Crie um vetor lógico chamado `presente` com os valores `TRUE`, `FALSE`, `TRUE`, `TRUE`, `FALSE`.
+3. Verifique **quantos** alunos estavam presentes com `sum(presente)`.
+4. Use a função `length()` para contar quantos nomes há no vetor.
+
+```{webr}
+nomes
+```
+
+---
+
+### 3. Construindo seu primeiro `data.frame`
+
+1. Use os vetores `nomes`, `alturas` e `presente` para criar um `data.frame` chamado `dados_alunos`.
+2. Visualize a tabela no console.
+3. Verifique a estrutura do objeto com `str()`.
+4. Use a função `summary()` para gerar um resumo estatístico das colunas numéricas.
+
+```{webr}
+dados_alunos
+```
+
+---
+
+### 4. Acessando elementos da tabela
+
+1. Mostre apenas a **primeira linha** da tabela.
+2. Mostre apenas a coluna `alturas`.
+3. Selecione as linhas dos alunos **presentes** (`TRUE`).
+4. Mostre apenas os nomes (`nomes`) dos alunos **com altura maior que 1.70 m**.
+
+```{webr}
+tabela
+```
+
+---
+
+### 5. Explorando funções novas
+
+1. Use `head()` para ver as primeiras linhas da tabela `dados_alunos`.
+2. Use `glimpse()` para uma visão geral.
+3. Use `nrow()` e `ncol()` para descobrir quantas linhas e colunas há.
+4. Tente ordenar o `data.frame` pela coluna `alturas`, do menor para o maior, usando a função `arrange()` do pacote `dplyr`.
+
+```{webr}
+dados_alunos
+```
+
+---
+
+### 6. Mini-desafio 🎯
+
+Crie um pequeno conjunto de dados fictício sobre **plantas amostradas em campo**.
+Inclua as colunas:
+
+* `especie` (nomes de 4 espécies quaisquer),
+* `altura_m` (valores numéricos com alturas em metros),
+* `florida` (valores lógicos TRUE/FALSE indicando se a planta estava florida).
+
+1. Monte o `data.frame` chamado `plantas`.
+2. Calcule a **média da altura** das plantas.
+3. Filtre apenas as plantas floridas.
+4. Renomeie a coluna `altura_m` para `altura_media_m`.
+
+```{webr}
+plantas <- data.frame()
+```
+
+------------------------------------------------------------------------
+
+## 🛠️ Manipulação e transformação de dados 🪛 com dplyr
+
+### Utilização do  *pipe* `|>`
+
+O [R desde a versão 4.1.0 permite a utilização do operador `|>`](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/), popularmente chamado de *pipe* (cano, em tradução literal), que permite o encadeamento de ações na linguagem.
+Isso serve apenas para facilitar a leitura do código.
+Assim lemos o código da esquerda para a direita.  
+
+Por exemplo, usando os exemplos anteriores, poderíamos fazer uso do *pipe* da seguinte maneira:
+
+```{webr}
+pinguins |> 
+  head()
+```
+
+```{webr}
+pinguins |> 
+  tail()
+```
+
+```{webr}
+pinguins |> 
+  glimpse()
+```
+
+**Reparem que o resultado é o mesmo apresentado na @sec-inspecaobasica.**  
+
+O verdadeiro poder do *pipe* `|>`  aparece quando encadeamos múltiplas operações em sequência.
+Isso nos permite realizar uma análise completa em poucas linhas de código, mantendo a lógica clara.  
+
+#### Exemplo
+
+Vamos filtrar os pinguins da espécie `Adelie`, selecionar a coluna de massa corporal, remover os valores ausentes e, por fim, calcular a média
+
+Veja como o |> torna essa sequência de passos fácil de ler:
+
+
+```{webr}
+pinguins |>
+  filter(species == "Adelie") |> 
+  select(body_mass_g) |> 
+  na.omit() |> 
+  summarise(media_massa = mean(body_mass_g))
+```
+
+::: {.callout-tip}
+#### `|>` funciona como um cano!
+
+Pense no `|>` como um cano que 'passa' o resultado do comando anterior para a próxima função.
+Isso nos permite ler o código da esquerda para a direita, como uma sequência de passos.
+:::
+
+Sem o *pipe*, o mesmo processo seria mais complexo e difícil de ler, pois uma função ficaria aninhada dentro da outra:
+
+```{webr}
+summarise(
+  na.omit(
+    select(
+      filter(pinguins, species == "Adelie"), 
+      body_mass_g)
+    ), 
+  media_massa = mean(body_mass_g))
+```
+
+O `|>` transforma essa sintaxe confusa em uma sequência lógica de comandos. 
+
+
+### Pacote `dplyr` 🪛
+
+O pacote **dplyr** (parte do [tidyverse](https://tidyverse.org/)) [@dplyr]facilita a manipulação de dados com verbos simples e encadeáveis.
+
+```{webr}
+# Filtrando dados
+dados |>
+  filter(amostrado == TRUE)
+
+# Selecionando colunas
+dados |>
+  select(especie, comprimento)
+
+# Criando novas variáveis
+dados |>
+  mutate(comprimento_cm = comprimento * 10)
+```
+
+::: callout-note
+#### Operador pipe `|>`
+Lê-se “então”. Ele envia o resultado de uma etapa para a próxima, tornando o código mais legível.
+Por exemplo, leia o código abaixo:
+
+```r
+dados |> filter(amostrado == TRUE)
+```
+O significado disso é:
+
+> “pegue `dados`, então filtre apenas as linhas com `amostrado == TRUE`”.
+
+:::
+
+#### Funções importantes!
+
++ `select()`: Escolhe colunas.
++ `filter()`: Filtra linhas.
++ `mutate()`: Cria novas colunas ou altera existentes.
++ `group_by()` e `summarize()`: Agrupa dados para fazer resumos.  
+
+Filtrando pinguins com barbatanas maiores que 200 mm:
+
+```{webr}
+pinguins_maior_que_200 <-
+  pinguins |>
+  filter(flipper_length_mm > 200)
+pinguins_maior_que_200
+```
+
+
+
+#### Seleção de colunas - `dplyr::select()`
+
+Podemos selecionar colunas com a função `select()`:
+
+```{webr}
+pinguins |>
+  select(flipper_length_mm, body_mass_g)
+```
+
+#### Criação de novas colunas - `dplyr::mutate()`
+
+Para criar novas colunas, usamos a função `mutate()`.
+
+```{webr}
+dados_com_nova_coluna <- 
+  pinguins |>
+  mutate(
+    diferenca = flipper_length_mm - bill_length_mm
+  )
+```
+
+Podemos fazer isso baseados em condições. Por exemplo, a função `case_when()` é ótima para aplicar várias regras, enquanto o `ifelse()` é mais simples e ideal para regras de 'se isso, então aquilo'.  
+
+```{webr}
+pinguins |>
+  mutate(barbatana_grande = case_when(
+    flipper_length_mm > 200 ~ "Grande",
+    flipper_length_mm < 200 ~ "Pequena",
+    .default = "Sem dados"
+  ))
+```
+
+```{webr}
+pinguins |>
+  mutate(
+    especie_Adelia = ifelse(species == "Adelia", TRUE, FALSE)
+      )
+```
+
+#### Agrupamento e sumarização de dados - `group_by()` e `summarise()`
+
+Podemos agrupar os dados por qualquer variável e fazer sumários estatísticos, úteis na análise exploratória de dados.
+Para agrupar os dados, utilizamos a função `group_by()`; e para sumarizar, utilizamos a função `summarise()`.  
+
+```{webr}
+pinguins |>
+  group_by(species) |>
+  summarise(
+    media_barbatana_mm = mean(flipper_length_mm, na.rm = TRUE),
+    n_individuos = n()
+  )
+```
+
+A função `summarise()` é incrivelmente poderosa para resumir seus dados.
+Além de calcular a média (`mean()`), podemos usar várias outras funções estatísticas para obter uma visão mais completa de cada grupo.  
+
+Imagine que queremos entender não apenas a média, mas também a variabilidade dos dados.
+Podemos calcular o desvio padrão (`sd()`), o valor mínimo (`min()`) e o máximo (`max()`) do comprimento da barbatana por espécie.  
+
+
+```{webr}
+pinguins |>
+  group_by(species) |>
+  summarise(
+    media_barbatana_mm = mean(flipper_length_mm, na.rm = TRUE),
+    desvio_padrao_mm = sd(flipper_length_mm, na.rm = TRUE),
+    min_barbatana_mm = min(flipper_length_mm, na.rm = TRUE),
+    max_barbatana_mm = max(flipper_length_mm, na.rm = TRUE),
+    n_individuos = n()
+  )
+```
+
+::: {.callout-tip}
+## `na.rm = TRUE`
+
+O `na.rm = TRUE` que você vê dentro das funções `mean()`, `sd()`, `min()` e `max()` significa 'remova os valores NA (valores ausentes) antes de fazer o cálculo'. Isso evita erros e garante que a função opere apenas com os dados disponíveis.  
+
+:::
+
+#### Mais um exemplo de agrupamentos
+
+Podemos gerar resumos por grupo — útil em análises ecológicas, por exemplo.
+
+```{webr}
+dados |>
+  group_by(amostrado) |>
+  summarise(
+    media = mean(comprimento),
+    desvio = sd(comprimento),
+    n = n()
+  )
+```
+
+
+#### Simplificando contagens com `count()`
+
+A função `count()` do pacote `dplyr` é a maneira mais simples e direta de realizar contagens por grupos.
+É uma ferramenta essencial na análise exploratória.  
+
+Enquanto `summarise()` pode ser usado para contar, a função `count()` foi feita para essa tarefa, tornando o código mais simples e intuitivo.
+Ela automaticamente agrupa os dados e conta a frequência de cada categoria.
+
+Por exemplo, se quisermos saber a quantidade de pinguins de cada espécie em cada ilha, basta usar `count()` e especificar as colunas:
+
+```{webr}
+pinguins |> 
+  count(species, island)
+```
+
+É uma maneira rápida e elegante de resumir a distribuição dos dados categóricos.  
+
+
+## 🧩 Exercícios Práticos — Parte II
+
+### 1. Selecionando e filtrando 🔍
+
+1. Selecione apenas as colunas `species`, `island` e `body_mass_g` do conjunto `pinguins`.
+2. Filtre apenas os pinguins da espécie **Gentoo**.
+3. Filtre apenas os pinguins com **massa corporal maior que 5000 g**.
+4. Combine as duas condições: mostre apenas pinguins da espécie **Gentoo** com massa **acima de 5000 g**.
+
+```{webr}
+pinguins
+```
+
+---
+
+### 2. Criando novas colunas ⚙️
+
+1. Crie uma nova coluna chamada `massa_kg`, que converta `body_mass_g` para quilogramas (`massa_kg = body_mass_g / 1000`).
+2. Crie uma coluna chamada `barbatana_categoria`, que classifique os pinguins como `"Curta"` se `flipper_length_mm < 190`, `"Média"` se estiver entre 190 e 210, e `"Longa"` se for maior que 210 (use `case_when()`).
+3. Mostre apenas as colunas `species`, `flipper_length_mm` e `barbatana_categoria`.
+
+```{webr}
+pinguins
+```
+
+---
+
+### 3. Agrupando e resumindo 📊
+
+1. Calcule a **média** da massa corporal (`body_mass_g`) para cada espécie de pinguim.
+2. Adicione também o **desvio padrão** e o **número de indivíduos** por espécie.
+3. Em seguida, adicione uma segunda camada de agrupamento, calculando esses valores por **espécie e ilha**.
+
+```{webr}
+pinguins
+```
+
+---
+
+### 4. Contagens rápidas com `count()` 🔢
+
+1. Conte quantos indivíduos existem de cada espécie (`species`).
+2. Conte quantos indivíduos existem por espécie e sexo (`species`, `sex`).
+3. Crie um novo objeto chamado `contagem_isla` com o número de pinguins por ilha (`island`), e visualize o resultado ordenado do maior para o menor número de registros (use `arrange(desc(n))`).
+
+```{webr}
+pinguins
+```
+
+---
+
+### 5. Combinando operações em sequência 🧠
+
+Agora, una vários passos em uma única sequência usando o operador `|>`:
+
+> Filtre apenas os pinguins da espécie *Adelie*, remova valores ausentes, crie uma nova coluna com a massa em kg, e calcule a média dessa nova coluna.
+
+```{webr}
+pinguins
+```
+
+---
+
+### 6. Mini-desafio ecológico 🌿
+
+Imagine que cada pinguim representa um indivíduo monitorado em campo.
+Use os dados para responder:
+
+1. Qual ilha possui, em média, os pinguins mais pesados?
+2. Qual espécie tem maior variação (desvio padrão) no comprimento da barbatana?
+3. Crie uma nova variável `densidade_aprox` definida como `(body_mass_g / flipper_length_mm)`, e mostre a média dessa variável por espécie.
+
+```{webr}
+pinguins
+```
+
+
+```{r}
+#| eval: false
+#| echo: false
+# Exercicio 6
+# 1. Ilha com pinguins mais pesados (média)
+pinguins |>
+  group_by(island) |>
+  summarise(media_massa = mean(body_mass_g, na.rm = TRUE)) |>
+  arrange(desc(media_massa))
+
+# 💡 Resultado esperado:
+
+# Biscoe é a ilha com pinguins mais pesados em média (~5076 g), seguida de Dream e Torgersen.
+
+# 2. Espécie com maior variação (desvio padrão) no comprimento da barbatana
+pinguins |>
+  group_by(species) |>
+  summarise(dp_barbatana = sd(flipper_length_mm, na.rm = TRUE)) |>
+  arrange(desc(dp_barbatana))
+
+# 💡 Resultado esperado:
+
+# Gentoo tem o maior desvio padrão (maior variação) no comprimento da barbatana.
+
+# 3. Densidade aproximada e média por espécie
+pinguins |>
+  mutate(densidade_aprox = body_mass_g / flipper_length_mm) |>
+  group_by(species) |>
+  summarise(media_densidade = mean(densidade_aprox, na.rm = TRUE)) |>
+  arrange(desc(media_densidade))
+
+# 💡 Resultado esperado:
+
+# Gentoo tende a ter a maior densidade aproximada, seguida de Chinstrap e Adelie.
+```
+
+
+---
+
+### 7. Desafio de síntese 🎯
+
+Combine tudo o que aprendeu até aqui para criar o seguinte relatório resumido:
+
+> Para cada espécie de pinguim, mostre:
+>
+> * número de indivíduos (`n`),
+> * massa corporal média em kg,
+> * comprimento médio e máximo da barbatana (mm).
+
+> Ordene o resultado da maior para a menor massa corporal média.
+
+```{webr}
+pinguins
+```
+
+```{r}
+#| eval: false
+#| echo: false
+# 1. Ilha com pinguins mais pesados (média)
+pinguins |>
+  group_by(island) |>
+  summarise(media_massa = mean(body_mass_g, na.rm = TRUE)) |>
+  arrange(desc(media_massa))
+
+# 💡 Resultado esperado:
+
+# Biscoe é a ilha com pinguins mais pesados em média (~5076 g), seguida de Dream e Torgersen.
+
+# 2. Espécie com maior variação (desvio padrão) no comprimento da barbatana
+pinguins |>
+  group_by(species) |>
+  summarise(dp_barbatana = sd(flipper_length_mm, na.rm = TRUE)) |>
+  arrange(desc(dp_barbatana))
+
+# 💡 Resultado esperado:
+
+# Gentoo tem o maior desvio padrão (maior variação) no comprimento da barbatana.
+
+# 3. Densidade aproximada e média por espécie
+pinguins |>
+  mutate(densidade_aprox = body_mass_g / flipper_length_mm) |>
+  group_by(species) |>
+  summarise(media_densidade = mean(densidade_aprox, na.rm = TRUE)) |>
+  arrange(desc(media_densidade))
+
+# 💡 Resultado esperado:
+
+# Gentoo tende a ter a maior densidade aproximada, seguida de Chinstrap e Adelie.
+```
+
+
+
+------------------------------------------------------------------------
+
+## 📈 Visualização de dados 📊
+
+<!-- Visualização (ggplot2) → 40 min -->
+
+O pacote `ggplot2` [@Wickham2016] uma "gramática de gráficos", em que você constrói o gráfico em camadas.
+As funções básicas do pacote, nesta ordem, são:
+
++ `ggplot()`: Define os dados e a estética (`aes()`).  
+
++ `geom_*`: Adiciona as camadas geométricas (pontos: `geom_point()`; barras: `geom_col()`; linhas: `geom_line()`).
+
+Façamos um histograma do comprimento do bico dos pinguins:
+
+```{webr}
+ggplot(pinguins, aes(x = bill_length_mm)) +
+  geom_histogram(binwidth = 5, fill = "skyblue", color = "black") +
+  labs(title = "Distribuição do comprimento de bico de pinguins do arquipélago Palmer", x = "Comprimento de bico (mm)", y = "Frequência")
+```
+
+### Visualizando relações entre variáveis
+
+Gráfico de dispersão entre comprimento de barbatana (`flipper_length_mm`) e massa corporal (`body_mass_g`)
+
+```{webr}
+pinguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(color = "darkblue", alpha = 0.6) +
+  labs(title = "Comprimento de barbatana e massa corporal de pinguins do arquipélago Palmer", x = "Comprimento de barbatana", y = "Massa corporal")# + geom_smooth(method = "lm", se = FALSE, color = "red")
+```
+
+------------------------------------------------------------------------
+
+### Explorando relações complexas
+
+Podemos adicionar mais variáveis aos nossos gráficos usando a estética.
+
++ `color`: Mapeia uma variável categórica para a cor.  
+
++ `facet_wrap()` e `facet_grid()`: Cria sub-gráficos para cada categoria.  
+
+```{webr}
+pinguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(title = "Comprimento de barbatana e massa corporal por espécie de pinguim ocorrentes no arquipélago Palmer", x = "Comprimento de barbatana", y = "Massa corporal")# + geom_smooth(method = "lm", se = FALSE, color = "red")
+```
+
+### Gráficos de facetas
+
+As facetas facilitam a visualização de dados por grupos.
+Há duas funções que produzem as facetas:
+
++ `facet_wrap()`, quando você quer visualizar dados por apenas uma variável;  
+
++ `facet_grid()`, que deve ser utilizada quando você quer ver a combinação entre duas variáveis.  
+
+
+```{webr}
+ggplot(pinguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  facet_wrap(~species) +
+  labs(
+    title = "Comprimento de barbatana e massa corporal\npor espécie de pinguim ocorrentes no arquipélago Palmer",
+    x = "Comprimento de barbatana (mm)",
+    y = "Massa corporal (g)")
+```
+
+
+```{webr}
+ggplot(pinguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  facet_grid(species ~ island) +
+  labs(
+    title = "Comprimento de barbatana e massa corporal\npor espécie de pinguim e ilha ocorrentes no arquipélago Palmer",
+    x = "Comprimento de barbatana (mm)",
+    y = "Massa corporal (g)")
+```
+
+### Gráfico de barras com `geom_col()`
+
+Além de histogramas e dispersões, gráficos de barras são muito úteis:
+
+```{webr}
+pinguins |> 
+  count(species) |> 
+  ggplot(aes(x = species, y = n, fill = species)) +
+  geom_col() +
+  labs(title = "Número de pinguins por espécie")
+```
+
+-----------
+
+## 🧩 Exercícios de Visualização - Parte III
+
+### 1. Histograma customizado 🎨
+
+Crie um histograma da variável `body_mass_g`.
+Use uma cor diferente para o preenchimento (`fill`) e outra para o contorno (`color`).
+Adicione título e rótulos adequados aos eixos.
+
+```{webr}
+# Coloque aqui seu código
+pinguins
+```
+
+---
+
+### 2. Relação entre duas variáveis 📈
+
+Faça um gráfico de dispersão entre `bill_length_mm` (comprimento do bico) e `bill_depth_mm` (profundidade do bico).
+Diferencie as espécies por cor (`color = species`) e use `alpha = 0.6` para dar transparência aos pontos.
+
+```{webr}
+# Coloque aqui seu código
+pinguins
+```
+
+---
+
+### 3. Comparando grupos com facetas 🧩
+
+Mostre o gráfico anterior, mas agora adicione facetas por **ilha** usando `facet_wrap(~island)`.
+Inclua um título e eixos legíveis.
+
+```{webr}
+# Coloque aqui seu código
+pinguins
+```
+
+---
+
+### 4. Gráfico de barras empilhadas 🧱
+
+Crie um gráfico de barras mostrando o número de pinguins por **espécie e sexo**.
+Use `geom_col(position = "dodge")` para colocar as barras lado a lado.
+Dê um título e personalize as cores com `fill = sex`.
+
+```{webr}
+# Coloque aqui seu código
+pinguins
+```
+
+
+---
+
+## Desafio da oficina
+
+Usando o que você aprendeu nesses dois dias, crie um pequeno conjunto de dados com **três espécies vegetais** e **três variáveis quantitativas** (por exemplo: altura, biomassa e área foliar).  
+
+1. Calcule a média de cada variável.
+2. Crie um gráfico simples (de pontos ou colunas) mostrando uma relação entre elas.
+3. Dê um título e rótulos adequados.  
+
+
+```{webr}
+# 1. Calcule a média de cada variável.
+# 2. Crie um gráfico simples (de pontos ou colunas) mostrando uma relação entre elas.
+# 3. Dê um título e rótulos adequados.  
+1 + 1 # Insira seu código aqui
+```
+
+---
+
+
+## Conclusão e próximos passos
+
+**Parabéns!**
+Você concluiu esta oficina de introdução à análise exploratória de dados em R.
+Vimos (quase) o ciclo completo da análise de dados: importação, limpeza, transformação e visualização.  
+
+**Onde seguir a partir daqui?**
+
++ **Aprofunde-se na linguagem R:** continue explorando os fundamentos da linguagem, funções, estruturas de dados e boas práticas de programação. Há vasta literatura introdutória e intermediária disponível — veja, por exemplo, [@VicentiniPerdiz2021].  
+
++ **Modelagem estatística:** avance para técnicas de análise inferencial e modelagem, como regressão linear, ANOVA, e modelos generalizados, entre outras.  
+
++ **Comunicação e visualização interativa:** transforme análises em aplicações dinâmicas e relatórios interativos com pacotes como {shiny}, {flexdashboard} e {rmarkdown}.  
+
+**Continue praticando** — cada nova análise é uma oportunidade para consolidar o que aprendeu e descobrir novas possibilidades dentro do universo do R!  
+
+*****************
+
+Ao concluir esta oficina, o participante aprendeu a:
+
+* compreender o que é o R e o ambiente RStudio, seus painéis e formas básicas de interação;
+
+* criar, armazenar e manipular objetos e vetores de diferentes tipos (numéricos, textuais e lógicos);
+
+* construir e explorar `data.frame`s, acessando linhas e colunas por diferentes métodos;
+
+* importar e inspecionar conjuntos de dados (.csv, .xlsx), utilizando funções como `read.table()`, `head()`, `str()` e `summary()`;
+
+* realizar checagem e limpeza de dados, incluindo tratamento de valores ausentes, renomeação de colunas e transformação de tipos;
+
+* aplicar os principais verbos do pacote `dplyr` (`select()`, `filter()`, `mutate()`, `group_by()`, `summarise()`, `count()`) para manipulação e transformação de dados;
+
+* compreender e utilizar o pipe nativo `|>` para encadear operações de forma legível e eficiente;
+
+* efetuar análises exploratórias, incluindo agrupamentos, sumarizações e contagens;
+
+* iniciar-se na visualização de dados por meio do pacote `ggplot2`, criando gráficos básicos para interpretação visual dos resultados.  
+
+---
+
+## Referências citadas
+
+::: {#refs}
+:::
+
+
