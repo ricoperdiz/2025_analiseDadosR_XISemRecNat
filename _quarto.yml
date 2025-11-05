@@ -1,0 +1,62 @@
+project:
+  title: "Análise exploratória de dados em ambiente R"
+  type: website
+  output-dir: site/
+  render:
+    - index.qmd
+    - por-que-r.qmd
+
+website:
+  title: "Introdução à análise exploratória de dados em ambiente R"
+  favicon: img/favicon.ico
+  description: "Página da oficina de introdução à análise exploratória de dados em ambiente R, preparada especialmente para o 'XI Seminário de Recursos Naturais: Biodiversidade e Sustentabilidade no contexto das mudanças climáticas' do Programa de pós-graduação em Recursos Naturais da Universidade Federal de Roraima, Brasil."
+  twitter-card:
+    image: img/tcard.png
+    card-style: "summary_large_image"
+    description: "Página da oficina de introdução à análise exploratória de dados em ambiente R, preparada especialmente para o 'XI Seminário de Recursos Naturais: Biodiversidade e Sustentabilidade no contexto das mudanças climáticas' do Programa de pós-graduação em Recursos Naturais da Universidade Federal de Roraima, Brasil."
+  navbar:
+    logo: img/favicon.ico
+    href: https://analiserpronatufrr.netlify.app/
+  site-url: "https://analiserpronatufrr.netlify.app/"
+  issue-url: https://github.com/ricoperdiz/2025_analiseDadosR_XISemRecNat/issues
+  repo-url: https://github.com/ricoperdiz/2025_analiseDadosR_XISemRecNat
+  repo-actions: [edit, source, issue]
+  open-graph:
+    site-name: "Introdução à análise exploratória de dados em ambiente R"
+    description: "Página da oficina de introdução à análise exploratória de dados em ambiente R, preparada especialmente para o 'XI Seminário de Recursos Naturais: Biodiversidade e Sustentabilidade no contexto das mudanças climáticas' do Programa de pós-graduação em Recursos Naturais da Universidade Federal de Roraima, Brasil."
+    image: img/tcard.png
+  comments:
+    giscus:
+      repo: ricoperdiz/2025_analiseDadosR_XISemRecNat
+      repo-id: "R_kgDOPx6geA"
+      category: "Announcements"
+      category-id: "DIC_kwDOPx6geM4Cvkqa"
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
+      input-position: top
+      theme:
+        light: "light"
+        dark: "purple_dark"
+      language: pt
+
+language:
+  search-box-placeholder: Busque aqui
+
+author:
+  - name: "R. O. Perdiz"
+    orcid: 0000-0002-2333-6549
+    email: ricoperdiz@gmail.com
+    affiliations: PRONAT - UFRR | CBIO - UFRR
+
+date-format: "DD MMM YYYY"
+
+bibliography:
+  - C:/Users/ricop/OneDrive/Documentos/CIENCIA/bibtex/geral.bib
+  - C:/Users/ricop/OneDrive/Documentos/CIENCIA/bibtex/apg.bib
+  - C:/Users/ricop/OneDrive/Documentos/CV/pubs.bib
+
+# csl: associacao-brasileira-de-normas-tecnicas.csl
+
+lang: pt-br
+
