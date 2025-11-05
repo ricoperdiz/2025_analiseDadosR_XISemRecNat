@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "por-que-r.html#sumário",
+    "href": "por-que-r.html#sumário",
+    "title": "Por que R?",
+    "section": "Sumário",
+    "text": "Sumário\n\nO que é o R?\nPor que R?\nComo podemos programar em R?\nInstalação do R e RStudio\nRecursos\n\n\nLivremente inspirado em https://gift.uni-goettingen.de/mcmmb/Day1_WhyR.html"
+  },
+  {
+    "objectID": "por-que-r.html#o-que-é-o-r-i",
+    "href": "por-que-r.html#o-que-é-o-r-i",
+    "title": "Por que R?",
+    "section": "O que é o R? I",
+    "text": "O que é o R? I\n\nUma linguagem de programação desenhada para a análise de dados\nSucessora da linguagem S\n“Tudo que existe em R é um objeto (Chambers 2017)”.\n“Tudo que acontece em R é resultado de uma função (Chambers 2017)”.\n\n\nInterfaces com outros programas é parte do R."
+  },
+  {
+    "objectID": "por-que-r.html#o-que-é-o-r-ii",
+    "href": "por-que-r.html#o-que-é-o-r-ii",
+    "title": "Por que R?",
+    "section": "O que é o R? II",
+    "text": "O que é o R? II\n\nAmbiente de computação estatística\n\nEstatística básica\nModelagem complexa (machine learning, simulações etc.)\n\nProdução de gráficos\nIntermediador de bancos de dados (DBI, RPostgreSQL, RMariaDB etc.)\nSIG"
+  },
+  {
+    "objectID": "por-que-r.html#o-que-é-o-r-iii",
+    "href": "por-que-r.html#o-que-é-o-r-iii",
+    "title": "Por que R?",
+    "section": "O que é o R? III",
+    "text": "O que é o R? III\n\nControle de versão (Git)\nProdutor de conteúdo: artigos, livros, sítios digitais, currículos, teses (utilizando Rmarkdown/Quarto)"
+  },
+  {
+    "objectID": "por-que-r.html#section",
+    "href": "por-que-r.html#section",
+    "title": "Por que R?",
+    "section": "",
+    "text": "Ferramenta 🛠️🛠️🛠️"
+  },
+  {
+    "objectID": "por-que-r.html#section-1",
+    "href": "por-que-r.html#section-1",
+    "title": "Por que R?",
+    "section": "",
+    "text": "Pensar criticamente"
+  },
+  {
+    "objectID": "por-que-r.html#section-2",
+    "href": "por-que-r.html#section-2",
+    "title": "Por que R?",
+    "section": "",
+    "text": "Resolver problemas"
+  },
+  {
+    "objectID": "por-que-r.html#section-3",
+    "href": "por-que-r.html#section-3",
+    "title": "Por que R?",
+    "section": "",
+    "text": "Comunicação"
+  },
+  {
+    "objectID": "por-que-r.html#section-4",
+    "href": "por-que-r.html#section-4",
+    "title": "Por que R?",
+    "section": "",
+    "text": "⬆️⬆️⬆️Capacidade analítica"
+  },
+  {
+    "objectID": "por-que-r.html#por-quê-r",
+    "href": "por-que-r.html#por-quê-r",
+    "title": "Por que R?",
+    "section": "Por quê R?",
+    "text": "Por quê R?\n\nTransparência"
+  },
+  {
+    "objectID": "por-que-r.html#por-quê-r-1",
+    "href": "por-que-r.html#por-quê-r-1",
+    "title": "Por que R?",
+    "section": "Por quê R?",
+    "text": "Por quê R?\n\nReprodutibilidade"
+  },
+  {
+    "objectID": "por-que-r.html#por-quê-r-2",
+    "href": "por-que-r.html#por-quê-r-2",
+    "title": "Por que R?",
+    "section": "Por quê R?",
+    "text": "Por quê R?\n\nCiência aberta e acessível"
+  },
+  {
+    "objectID": "por-que-r.html#como-podemos-programar-em-r",
+    "href": "por-que-r.html#como-podemos-programar-em-r",
+    "title": "Por que R?",
+    "section": "Como podemos programar em R?",
+    "text": "Como podemos programar em R?"
+  },
+  {
+    "objectID": "por-que-r.html#section-6",
+    "href": "por-que-r.html#section-6",
+    "title": "Por que R?",
+    "section": "",
+    "text": "O RStudio possui quatro painéis principais:\nConsole: onde você executa comandos.\nSource: onde você escreve e salva scripts.\nEnvironment: lista objetos carregados.\nPlots/Help/Files: mostra gráficos, ajuda e diretórios."
+  },
+  {
+    "objectID": "por-que-r.html#instalação-do-r-e-rstudio",
+    "href": "por-que-r.html#instalação-do-r-e-rstudio",
+    "title": "Por que R?",
+    "section": "Instalação do R e RStudio",
+    "text": "Instalação do R e RStudio\nCaso você possua um computador, siga as instruções presentes na página abaixo:"
+  },
+  {
+    "objectID": "por-que-r.html#caso-você-não-possua-um-computador",
+    "href": "por-que-r.html#caso-você-não-possua-um-computador",
+    "title": "Por que R?",
+    "section": "Caso você não possua um computador …",
+    "text": "Caso você não possua um computador …\n\nFaça o minicurso utilizando apenas um dispositivo com acesso à rede.\nO R rodará na própria página através do pacote JavaScript WebR."
+  },
+  {
+    "objectID": "por-que-r.html#recursos",
+    "href": "por-que-r.html#recursos",
+    "title": "Por que R?",
+    "section": "Recursos",
+    "text": "Recursos\n\nQuer aprender R? Quer mergulhar no básico da linguagem? Estude nosso livro disponível em https://intror.netlify.app/\nSe quiser aprender uma ferramenta de escrita científica chamada Rmarkdown, visite nosso livro disponível em https://intrormarkdown.netlify.app/\nR avançado? Leia o livro Advanced R (Wickham 2019)."
+  },
+  {
+    "objectID": "por-que-r.html#referências",
+    "href": "por-que-r.html#referências",
+    "title": "Por que R?",
+    "section": "Referências",
+    "text": "Referências\n\n\n\n\nChambers, John M. 2017. Extending R. Chapman; Hall/CRC. https://doi.org/10.1201/9781315381305.\n\n\nWickham, Hadley. 2019. Advanced R. Chapman; Hall/CRC. https://doi.org/10.1201/9781351201315."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "",
+    "text": "NotaDados da oficina\n\n\n\nBaixe aqui:\n\npenguins.csv\npenguins.xlsx"
+  },
+  {
+    "objectID": "index.html#apresentação-da-oficina",
+    "href": "index.html#apresentação-da-oficina",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "Apresentação da oficina",
+    "text": "Apresentação da oficina\nO objetivo desta oficina é introduzir o uso da linguagem R e do ambiente RStudio para análise exploratória de dados, com foco em aplicações nas Ciências ambientais.\nAo final desta oficina, você terá os conhecimentos básicos para importar, manipular, agrupar e contar, e visualizar dados simples em R.\nDurante as oito horas de oficina, apresentaremos resumidamente comandos básicos em R que cobrem quase todo o ciclo da análise de dados (Figura 1). Nosso intuito é demonstrar o poder do R enquanto ferramenta para a análise de dados. Oferecemos então uma introdução à importação de dados, checagem e transformação de dados, manipulação de dados, agrupamento e sumarização de dados, e, por fim, visualização de dados.\n\n\n\n\n\n\n\n\nFigura 1: Ciclo da análise de dados. Neste curso, não abordaremos a modelagem de dados. Fonte: Curso-R, disponível em https://livro.curso-r.com/assets/img/manipulacao/ciclo-ciencia-de-dados.png."
+  },
+  {
+    "objectID": "index.html#o-que-é-o-r",
+    "href": "index.html#o-que-é-o-r",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "O que é o R?",
+    "text": "O que é o R?\nR é uma linguagem de programação e um ambiente de software livre voltado à análise estatística, exploração e visualização de dados (Ihaka e Gentleman 1996).\nCriado por Ross Ihaka e Robert Gentleman, o R é amplamente utilizado por estatísticos, cientistas de dados e pesquisadores para organizar, analisar e interpretar grandes volumes de informação de forma eficiente e reprodutível (Wickham e Grolemund 2017)."
+  },
+  {
+    "objectID": "index.html#por-que-r",
+    "href": "index.html#por-que-r",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "Por que R?",
+    "text": "Por que R?\n    View slides in full screen"
+  },
+  {
+    "objectID": "index.html#o-ide-rstudio",
+    "href": "index.html#o-ide-rstudio",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "O IDE RStudio",
+    "text": "O IDE RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE), que facilita o uso do R. Ele é dividido em quatro painéis principais:\n\nScript (Editor) – onde escrevemos e salvamos códigos;\n\nConsole – onde os comandos são executados;\n\nAmbiente – mostra objetos carregados na sessão;\n\nArquivos, plots e pacotes – onde gerenciamos pastas, gráficos e extensões.\n\n\n\n\n\n\n\nNota\n\n\n\nDica:\nUse o atalho Ctrl + Enter (ou Cmd + Enter no macOS) para executar uma linha de código selecionada."
+  },
+  {
+    "objectID": "index.html#básico-em-r",
+    "href": "index.html#básico-em-r",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🔰 Básico em R",
+    "text": "🔰 Básico em R\n\nPrimeiros comandos\nO R pode ser usado como uma calculadora interativa.\nExperimente no console:\n\n\n\n\n\n\n\n\n\n\n\nObjetos e atribuição\nNo R, os dados são armazenados em objetos. Usamos &lt;- (ou =) para atribuir valores.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nBoa prática: Use nomes curtos e descritivos (sem acentos ou espaços), como dados_plantas ou taxa_crescimento.\n\n\nPodemos fazer operações matemáticas e guardar resultado das operações em objetos.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVer o conteúdo de um objeto\nPara ver o conteúdo de um objeto, basta digitar seu nome e rodar o código. Por exemplo, para ver a soma, que está no objeto soma, fazemos assim:\n\n\n\n\n\n\n\n\n\n\nConcatenando elementos com a função c()\nPodemos concatenar elementos utilizando a função c(). Chamamos esse conjunto de elementos de vetores:\n\n\n\n\n\n\n\n\nAcima, criamos os vetores numeros e letras. Reparem que em letras adicionamos letras do alfabeto entre aspas \"\". Devemos fazer isso toda vez que desejarmos guardar texto em um objeto.\n\n\n\nTipos de dados e vetores\nOs vetores são as estruturas básicas do R. Podem conter números, caracteres ou valores lógicos.\n\n\n\n\n\n\n\n\n\n\n\nEstruturas de dados em R\n\n\n\nEstrutura\nDescrição\nExemplo\n\n\n\n\nVetor\nSequência unidimensional\nc(1,2,3)\n\n\nMatriz\nTabela numérica bidimensional\nmatrix()\n\n\nData frame\nTabela com colunas de tipos diferentes\ndata.frame()\n\n\nLista\nConjunto heterogêneo de objetos\nlist()\n\n\n\nPodemos criar tabelas, por exemplo. No R, chamamos tabelas de data.frame. Cada coluna precisa ser um vetor (criado com a função c()). A função data.frame() junta esses vetores, criando uma tabela.\nEm nosso exemplo exposto abaixo, os argumentos ID, Nome e Idade representam os nomes das colunas de nossa tabela, guardada no objeto dados_exemplo:\n\n\n\n\n\n\n\n\nPodemos ver o conteúdo de dados_exemplo também simplesmente executando o nome do objeto:\n\n\n\n\n\n\n\n\n\n\nExemplo 2 de criação de um data.frame:\n\n\n\n\n\n\n\n\n\n\n\nAcessando elementos\nPodemos acessar elementos com colchetes [] ou pelo nome da coluna.\n\n\n\n\n\n\n\n\n\n\n\nPacotes e funções\nO R possui milhares de pacotes que estendem suas funcionalidades. Pacotes em R são conjuntos de funções ou conjuntos de dados. Utilizamos a função install.packages() para instalar esses pacotes. Neste curso, faremos uso dos pacotes dplyr (Wickham et al. 2023), palmerpenguins (Horst, Hill, e Gorman 2020), readxl (Wickham e Bryan 2025) e ggplot2 (Wickham 2016). Primeiro, devemos instalar os pacotes. Em seguida, carregamos os pacotes de interesse para nossos objetivos.\n\n\n\n\n\n\nImportanteinstall.packages() VS. library()\n\n\n\nInstalamos pacotes R uma vez apenas, para cada versão de R que tivermos instalado no computador. Por outro lado, a cada sessão nova de R, devemos carregar os pacotes utilizando a função library(), de forma que as funções dos pacotes estejam disponíveis na sessão.\nA função install.packages() é como instalar um aplicativo no seu celular: você faz uma vez. O library() é como abrir esse aplicativo para usá-lo: você precisa fazer isso em cada nova sessão que iniciar.\n\n\nO pacote dplyr inaugurou uma nova sintaxe em R (ver a postagem O que é o Tidyverse para mais informações), que permite a manipulação de dados tabulares de maneira mais prática e com mais clareza ao usuário.\nO ggplot2 (Wickham 2016) é a ferramenta de visualização mais popular em R e será utilizada neste minicurso. Ele segue uma “gramática de gráficos”, em que você constrói o gráfico em camadas.\nO pacote readxl (Wickham e Bryan 2025) é usado para importar planilhas .xls e .xlsx diretamente no R, sem precisar ter programas como o Excel/LibreOffice Calc instalados e sem depender de outras ferramentas externas. É amplamente utilizado para trazer dados tabulares para dentro do R de forma rápida e prática, preservando nomes de colunas e tipos de variáveis.\nPor sua vez, o pacote palmerpenguins (Horst, Hill, e Gorman 2020) oferece um conjunto de dados referente à morfologia de três espécies de pinguins que ocorrem no arquipélago de Palmer no noroeste da península Antártica.\n\n# Instalar (executar uma única vez)\ninstall.packages(\"dplyr\")\ninstall.packages(\"ggplot2\")\ninstall.packages(\"palmerpenguins\")\ninstall.packages(\"readxl\")\n\nAgora carregaremos o pacote por meio da função library(). Devemos inserir o nome do pacote que queremos carregar entre os parênteses, com ou sem aspas.\n\n# Carregar\nlibrary(\"dplyr\")\nlibrary(\"ggplot2\")\nlibrary(\"palmerpenguins\")\nlibrary(\"readxl\")\n\nFunções têm o formato nome(argumentos)."
+  },
+  {
+    "objectID": "index.html#importando-dados",
+    "href": "index.html#importando-dados",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🧳 Importando dados 🎲",
+    "text": "🧳 Importando dados 🎲\n\nPara a análise de dados, precisamos carregar dados 😄😄😄. Existem diversas maneiras de importar dados ao R. Importaremos um arquivo CSV referente ao pacote R palmerpenguins (Horst, Hill, e Gorman 2020).\n\n\n\n\n\n\n\n\nPodemos ler arquivos xlsx utilizando a função read_excel() do pacote readxl (Wickham e Bryan 2025):\n\n\n\n\n\n\n\n\n\nResultado da leitura de dados usando read.table()\nQuando executamos os dados lidos pela função read.table(), podemos acabar vendo muita coisa, o que pode acabar incomodando. Desta forma, pode-se utilizar a função head() para ver apenas as primeiras seis linhas da tabela.\n\n\n\n\n\n\nDicaDiferença entre read.csv() e read.table()\n\n\n\nO R possui diferentes funções para ler tabelas:\n\nread.csv() é uma forma simplificada de read.table() já configurada para ler arquivos separados por vírgula (,) e com ponto (.) como separador decimal.\nread.table() é mais flexível, permitindo ajustar separador (sep) e símbolo decimal (dec).\n\n\n\n\n\n\nInspeção básica - head(), tail(), str(), summary() e glimpse()\n\nAgora que os dados foram lidos, vamos inspecioná-los. Para ver as primeiras linhas/valores de um objeto, utilizamos a função head():\n\n\n\n\n\n\n\n\nPara observar os últimos valores, utilizamos a função tail():\n\n\n\n\n\n\n\n\nPodemos utilizar a função dplyr::glimpse() para ver a estrutura dos dados:\n\n\n\n\n\n\n\n\nAlém de dplyr::glimpse(), duas funções muito úteis para inspecionar dados são:\n\nstr(): mostra a estrutura do objeto.\nsummary(): gera um resumo estatístico das variáveis numéricas e uma contagem das categorias."
+  },
+  {
+    "objectID": "index.html#limpeza-e-checagem-de-dados",
+    "href": "index.html#limpeza-e-checagem-de-dados",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🧹 Limpeza e checagem de dados 👀",
+    "text": "🧹 Limpeza e checagem de dados 👀\nDados do mundo real raramente são perfeitos. Precisamos limpá-los.\n\nDados ausentes (NA): Verificando e lidando com valores NA.\nTipos de colunas: Garantindo que cada coluna tenha o tipo de dado correto (numérico, texto, etc.).\n\n\nDados ausentes\n\n\n\n\n\n\n\n\n\n\nRemovendo linhas com NA\nPara remover todas as linhas que apresentarem valoes ausentes, podemos utilizar a função na.omit().\n\n\n\n\n\n\n\n\nAgora checamos os dados após a remoção das linhas com dados ausentes:\n\n\n\n\n\n\n\n\n\n\nRenomear colunas\nPodemos renomear colunas utilizando a função dplyr::rename():\n\n\n\n\n\n\n\n\nVeja agora o resultado da renomeação das colunas:\n\n\n\n\n\n\n\n\n\n\nTransformação de tipos de dados/colunas\nÀs vezes, uma coluna que deveria ser numérica (por exemplo, com números) é lida como um texto. Isso pode acontecer quando a coluna tem algum valor não numérico, como um caractere especial ou um espaço.\nPara resolver, podemos converter o tipo de dado. Por exemplo, vamos transformar a coluna body_mass_g para o tipo numérico usando a função as.numeric():\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDicaAjuda para entender quais são os argumentos de uma função\n\n\n\nO R possui uma função, chamada ajuda “help”, que deve ser utilizada para obtermos informação sobre o que uma função executa. Para obter essa ajuda, devemos pegar a função e executá-la da seguinte forma:\n\n?read.table\n?na.omit\n?c\n\nAo utilizar o ? junto ao nome de uma função, sem os parênteses, uma janela se abre contendo várias informações úteis referentes ao que aquela determinada função faz. Teste aí!"
+  },
+  {
+    "objectID": "index.html#exercícios-práticos-parte-i",
+    "href": "index.html#exercícios-práticos-parte-i",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🧩 Exercícios Práticos — Parte I",
+    "text": "🧩 Exercícios Práticos — Parte I\n\n1. Criando e manipulando vetores\n\nCrie um vetor chamado alturas com os valores 1.60, 1.72, 1.80, 1.65 e 1.75.\nCalcule a média das alturas utilizando a função mean().\nCalcule o desvio-padrão com sd().\nSome 0.05 a cada valor do vetor, simulando um aumento de 5 cm, e guarde o resultado em um novo vetor chamado alturas_ajustadas.\nCompare os dois vetores (alturas e alturas_ajustadas) no console.\n\n\n\n\n\n\n\n\n\n\n\n\n2. Trabalhando com vetores de texto e lógicos\n\nCrie um vetor chamado nomes com os valores \"Ana\", \"Bruno\", \"Carlos\", \"Daniela\", \"Eduardo\".\nCrie um vetor lógico chamado presente com os valores TRUE, FALSE, TRUE, TRUE, FALSE.\nVerifique quantos alunos estavam presentes com sum(presente).\nUse a função length() para contar quantos nomes há no vetor.\n\n\n\n\n\n\n\n\n\n\n\n\n3. Construindo seu primeiro data.frame\n\nUse os vetores nomes, alturas e presente para criar um data.frame chamado dados_alunos.\nVisualize a tabela no console.\nVerifique a estrutura do objeto com str().\nUse a função summary() para gerar um resumo estatístico das colunas numéricas.\n\n\n\n\n\n\n\n\n\n\n\n\n4. Acessando elementos da tabela\n\nMostre apenas a primeira linha da tabela.\nMostre apenas a coluna alturas.\nSelecione as linhas dos alunos presentes (TRUE).\nMostre apenas os nomes (nomes) dos alunos com altura maior que 1.70 m.\n\n\n\n\n\n\n\n\n\n\n\n\n5. Explorando funções novas\n\nUse head() para ver as primeiras linhas da tabela dados_alunos.\nUse glimpse() para uma visão geral.\nUse nrow() e ncol() para descobrir quantas linhas e colunas há.\nTente ordenar o data.frame pela coluna alturas, do menor para o maior, usando a função arrange() do pacote dplyr.\n\n\n\n\n\n\n\n\n\n\n\n\n6. Mini-desafio 🎯\nCrie um pequeno conjunto de dados fictício sobre plantas amostradas em campo. Inclua as colunas:\n\nespecie (nomes de 4 espécies quaisquer),\naltura_m (valores numéricos com alturas em metros),\nflorida (valores lógicos TRUE/FALSE indicando se a planta estava florida).\n\n\nMonte o data.frame chamado plantas.\nCalcule a média da altura das plantas.\nFiltre apenas as plantas floridas.\nRenomeie a coluna altura_m para altura_media_m."
+  },
+  {
+    "objectID": "index.html#manipulação-e-transformação-de-dados-com-dplyr",
+    "href": "index.html#manipulação-e-transformação-de-dados-com-dplyr",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🛠️ Manipulação e transformação de dados 🪛 com dplyr",
+    "text": "🛠️ Manipulação e transformação de dados 🪛 com dplyr\n\nUtilização do pipe |&gt;\nO R desde a versão 4.1.0 permite a utilização do operador |&gt;, popularmente chamado de pipe (cano, em tradução literal), que permite o encadeamento de ações na linguagem. Isso serve apenas para facilitar a leitura do código. Assim lemos o código da esquerda para a direita.\nPor exemplo, usando os exemplos anteriores, poderíamos fazer uso do pipe da seguinte maneira:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReparem que o resultado é o mesmo apresentado na Seção 6.2.\nO verdadeiro poder do pipe |&gt; aparece quando encadeamos múltiplas operações em sequência. Isso nos permite realizar uma análise completa em poucas linhas de código, mantendo a lógica clara.\n\nExemplo\nVamos filtrar os pinguins da espécie Adelie, selecionar a coluna de massa corporal, remover os valores ausentes e, por fim, calcular a média\nVeja como o |&gt; torna essa sequência de passos fácil de ler:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDica|&gt; funciona como um cano!\n\n\n\nPense no |&gt; como um cano que ‘passa’ o resultado do comando anterior para a próxima função. Isso nos permite ler o código da esquerda para a direita, como uma sequência de passos.\n\n\nSem o pipe, o mesmo processo seria mais complexo e difícil de ler, pois uma função ficaria aninhada dentro da outra:\n\n\n\n\n\n\n\n\nO |&gt; transforma essa sintaxe confusa em uma sequência lógica de comandos.\n\n\n\nPacote dplyr 🪛\nO pacote dplyr (parte do tidyverse) (Wickham et al. 2023)facilita a manipulação de dados com verbos simples e encadeáveis.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotaOperador pipe |&gt;\n\n\n\nLê-se “então”. Ele envia o resultado de uma etapa para a próxima, tornando o código mais legível. Por exemplo, leia o código abaixo:\ndados |&gt; filter(amostrado == TRUE)\nO significado disso é:\n\n“pegue dados, então filtre apenas as linhas com amostrado == TRUE”.\n\n\n\n\nFunções importantes!\n\nselect(): Escolhe colunas.\nfilter(): Filtra linhas.\nmutate(): Cria novas colunas ou altera existentes.\ngroup_by() e summarize(): Agrupa dados para fazer resumos.\n\nFiltrando pinguins com barbatanas maiores que 200 mm:\n\n\n\n\n\n\n\n\n\n\nSeleção de colunas - dplyr::select()\nPodemos selecionar colunas com a função select():\n\n\n\n\n\n\n\n\n\n\nCriação de novas colunas - dplyr::mutate()\nPara criar novas colunas, usamos a função mutate().\n\n\n\n\n\n\n\n\nPodemos fazer isso baseados em condições. Por exemplo, a função case_when() é ótima para aplicar várias regras, enquanto o ifelse() é mais simples e ideal para regras de ‘se isso, então aquilo’.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAgrupamento e sumarização de dados - group_by() e summarise()\nPodemos agrupar os dados por qualquer variável e fazer sumários estatísticos, úteis na análise exploratória de dados. Para agrupar os dados, utilizamos a função group_by(); e para sumarizar, utilizamos a função summarise().\n\n\n\n\n\n\n\n\nA função summarise() é incrivelmente poderosa para resumir seus dados. Além de calcular a média (mean()), podemos usar várias outras funções estatísticas para obter uma visão mais completa de cada grupo.\nImagine que queremos entender não apenas a média, mas também a variabilidade dos dados. Podemos calcular o desvio padrão (sd()), o valor mínimo (min()) e o máximo (max()) do comprimento da barbatana por espécie.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDicana.rm = TRUE\n\n\n\nO na.rm = TRUE que você vê dentro das funções mean(), sd(), min() e max() significa ‘remova os valores NA (valores ausentes) antes de fazer o cálculo’. Isso evita erros e garante que a função opere apenas com os dados disponíveis.\n\n\n\n\nMais um exemplo de agrupamentos\nPodemos gerar resumos por grupo — útil em análises ecológicas, por exemplo.\n\n\n\n\n\n\n\n\n\n\nSimplificando contagens com count()\nA função count() do pacote dplyr é a maneira mais simples e direta de realizar contagens por grupos. É uma ferramenta essencial na análise exploratória.\nEnquanto summarise() pode ser usado para contar, a função count() foi feita para essa tarefa, tornando o código mais simples e intuitivo. Ela automaticamente agrupa os dados e conta a frequência de cada categoria.\nPor exemplo, se quisermos saber a quantidade de pinguins de cada espécie em cada ilha, basta usar count() e especificar as colunas:\n\n\n\n\n\n\n\n\nÉ uma maneira rápida e elegante de resumir a distribuição dos dados categóricos."
+  },
+  {
+    "objectID": "index.html#exercícios-práticos-parte-ii",
+    "href": "index.html#exercícios-práticos-parte-ii",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🧩 Exercícios Práticos — Parte II",
+    "text": "🧩 Exercícios Práticos — Parte II\n\n1. Selecionando e filtrando 🔍\n\nSelecione apenas as colunas species, island e body_mass_g do conjunto pinguins.\nFiltre apenas os pinguins da espécie Gentoo.\nFiltre apenas os pinguins com massa corporal maior que 5000 g.\nCombine as duas condições: mostre apenas pinguins da espécie Gentoo com massa acima de 5000 g.\n\n\n\n\n\n\n\n\n\n\n\n\n2. Criando novas colunas ⚙️\n\nCrie uma nova coluna chamada massa_kg, que converta body_mass_g para quilogramas (massa_kg = body_mass_g / 1000).\nCrie uma coluna chamada barbatana_categoria, que classifique os pinguins como \"Curta\" se flipper_length_mm &lt; 190, \"Média\" se estiver entre 190 e 210, e \"Longa\" se for maior que 210 (use case_when()).\nMostre apenas as colunas species, flipper_length_mm e barbatana_categoria.\n\n\n\n\n\n\n\n\n\n\n\n\n3. Agrupando e resumindo 📊\n\nCalcule a média da massa corporal (body_mass_g) para cada espécie de pinguim.\nAdicione também o desvio padrão e o número de indivíduos por espécie.\nEm seguida, adicione uma segunda camada de agrupamento, calculando esses valores por espécie e ilha.\n\n\n\n\n\n\n\n\n\n\n\n\n4. Contagens rápidas com count() 🔢\n\nConte quantos indivíduos existem de cada espécie (species).\nConte quantos indivíduos existem por espécie e sexo (species, sex).\nCrie um novo objeto chamado contagem_isla com o número de pinguins por ilha (island), e visualize o resultado ordenado do maior para o menor número de registros (use arrange(desc(n))).\n\n\n\n\n\n\n\n\n\n\n\n\n5. Combinando operações em sequência 🧠\nAgora, una vários passos em uma única sequência usando o operador |&gt;:\n\nFiltre apenas os pinguins da espécie Adelie, remova valores ausentes, crie uma nova coluna com a massa em kg, e calcule a média dessa nova coluna.\n\n\n\n\n\n\n\n\n\n\n\n\n6. Mini-desafio ecológico 🌿\nImagine que cada pinguim representa um indivíduo monitorado em campo. Use os dados para responder:\n\nQual ilha possui, em média, os pinguins mais pesados?\nQual espécie tem maior variação (desvio padrão) no comprimento da barbatana?\nCrie uma nova variável densidade_aprox definida como (body_mass_g / flipper_length_mm), e mostre a média dessa variável por espécie.\n\n\n\n\n\n\n\n\n\n\n\n\n7. Desafio de síntese 🎯\nCombine tudo o que aprendeu até aqui para criar o seguinte relatório resumido:\n\nPara cada espécie de pinguim, mostre:\n\nnúmero de indivíduos (n),\nmassa corporal média em kg,\ncomprimento médio e máximo da barbatana (mm).\n\n\n\nOrdene o resultado da maior para a menor massa corporal média."
+  },
+  {
+    "objectID": "index.html#visualização-de-dados",
+    "href": "index.html#visualização-de-dados",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "📈 Visualização de dados 📊",
+    "text": "📈 Visualização de dados 📊\n\nO pacote ggplot2 (Wickham 2016) uma “gramática de gráficos”, em que você constrói o gráfico em camadas. As funções básicas do pacote, nesta ordem, são:\n\nggplot(): Define os dados e a estética (aes()).\ngeom_*: Adiciona as camadas geométricas (pontos: geom_point(); barras: geom_col(); linhas: geom_line()).\n\nFaçamos um histograma do comprimento do bico dos pinguins:\n\n\n\n\n\n\n\n\n\nVisualizando relações entre variáveis\nGráfico de dispersão entre comprimento de barbatana (flipper_length_mm) e massa corporal (body_mass_g)\n\n\n\n\n\n\n\n\n\n\n\nExplorando relações complexas\nPodemos adicionar mais variáveis aos nossos gráficos usando a estética.\n\ncolor: Mapeia uma variável categórica para a cor.\nfacet_wrap() e facet_grid(): Cria sub-gráficos para cada categoria.\n\n\n\n\n\n\n\n\n\n\n\nGráficos de facetas\nAs facetas facilitam a visualização de dados por grupos. Há duas funções que produzem as facetas:\n\nfacet_wrap(), quando você quer visualizar dados por apenas uma variável;\nfacet_grid(), que deve ser utilizada quando você quer ver a combinação entre duas variáveis.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGráfico de barras com geom_col()\nAlém de histogramas e dispersões, gráficos de barras são muito úteis:"
+  },
+  {
+    "objectID": "index.html#exercícios-de-visualização---parte-iii",
+    "href": "index.html#exercícios-de-visualização---parte-iii",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "🧩 Exercícios de Visualização - Parte III",
+    "text": "🧩 Exercícios de Visualização - Parte III\n\n1. Histograma customizado 🎨\nCrie um histograma da variável body_mass_g. Use uma cor diferente para o preenchimento (fill) e outra para o contorno (color). Adicione título e rótulos adequados aos eixos.\n\n\n\n\n\n\n\n\n\n\n\n2. Relação entre duas variáveis 📈\nFaça um gráfico de dispersão entre bill_length_mm (comprimento do bico) e bill_depth_mm (profundidade do bico). Diferencie as espécies por cor (color = species) e use alpha = 0.6 para dar transparência aos pontos.\n\n\n\n\n\n\n\n\n\n\n\n3. Comparando grupos com facetas 🧩\nMostre o gráfico anterior, mas agora adicione facetas por ilha usando facet_wrap(~island). Inclua um título e eixos legíveis.\n\n\n\n\n\n\n\n\n\n\n\n4. Gráfico de barras empilhadas 🧱\nCrie um gráfico de barras mostrando o número de pinguins por espécie e sexo. Use geom_col(position = \"dodge\") para colocar as barras lado a lado. Dê um título e personalize as cores com fill = sex."
+  },
+  {
+    "objectID": "index.html#desafio-da-oficina",
+    "href": "index.html#desafio-da-oficina",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "Desafio da oficina",
+    "text": "Desafio da oficina\nUsando o que você aprendeu nesses dois dias, crie um pequeno conjunto de dados com três espécies vegetais e três variáveis quantitativas (por exemplo: altura, biomassa e área foliar).\n\nCalcule a média de cada variável.\nCrie um gráfico simples (de pontos ou colunas) mostrando uma relação entre elas.\nDê um título e rótulos adequados."
+  },
+  {
+    "objectID": "index.html#conclusão-e-próximos-passos",
+    "href": "index.html#conclusão-e-próximos-passos",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "Conclusão e próximos passos",
+    "text": "Conclusão e próximos passos\nParabéns! Você concluiu esta oficina de introdução à análise exploratória de dados em R. Vimos (quase) o ciclo completo da análise de dados: importação, limpeza, transformação e visualização.\nOnde seguir a partir daqui?\n\nAprofunde-se na linguagem R: continue explorando os fundamentos da linguagem, funções, estruturas de dados e boas práticas de programação. Há vasta literatura introdutória e intermediária disponível — veja, por exemplo, (Vicentini e Perdiz 2021).\nModelagem estatística: avance para técnicas de análise inferencial e modelagem, como regressão linear, ANOVA, e modelos generalizados, entre outras.\nComunicação e visualização interativa: transforme análises em aplicações dinâmicas e relatórios interativos com pacotes como {shiny}, {flexdashboard} e {rmarkdown}.\n\nContinue praticando — cada nova análise é uma oportunidade para consolidar o que aprendeu e descobrir novas possibilidades dentro do universo do R!\n\nAo concluir esta oficina, o participante aprendeu a:\n\ncompreender o que é o R e o ambiente RStudio, seus painéis e formas básicas de interação;\ncriar, armazenar e manipular objetos e vetores de diferentes tipos (numéricos, textuais e lógicos);\nconstruir e explorar data.frames, acessando linhas e colunas por diferentes métodos;\nimportar e inspecionar conjuntos de dados (.csv, .xlsx), utilizando funções como read.table(), head(), str() e summary();\nrealizar checagem e limpeza de dados, incluindo tratamento de valores ausentes, renomeação de colunas e transformação de tipos;\naplicar os principais verbos do pacote dplyr (select(), filter(), mutate(), group_by(), summarise(), count()) para manipulação e transformação de dados;\ncompreender e utilizar o pipe nativo |&gt; para encadear operações de forma legível e eficiente;\nefetuar análises exploratórias, incluindo agrupamentos, sumarizações e contagens;\niniciar-se na visualização de dados por meio do pacote ggplot2, criando gráficos básicos para interpretação visual dos resultados."
+  },
+  {
+    "objectID": "index.html#referências-citadas",
+    "href": "index.html#referências-citadas",
+    "title": "Oficina ‘Introdução à análise exploratória de dados em ambiente R’",
+    "section": "Referências citadas",
+    "text": "Referências citadas\n\n\nHorst, Allison Marie, Alison Presmanes Hill, e Kristen B Gorman. 2020. palmerpenguins: Palmer Archipelago (Antarctica) penguin data. https://doi.org/10.5281/zenodo.3960218.\n\n\nIhaka, Ross, e Robert Gentleman. 1996. “R: A Language for Data Analysis and Graphics”. Journal of Computational and Graphical Statistics 5 (3): 299–314. http://www.jstor.org/stable/1390807.\n\n\nVicentini, Alberto, e Ricardo Oliveira Perdiz. 2021. Curso básico de introdução à linguagem R. https://intror.netlify.app.\n\n\nWickham, Hadley. 2016. ggplot2: Elegant Graphics for Data Analysis. New York: Springer-Verlag. https://ggplot2.tidyverse.org.\n\n\nWickham, Hadley, e Jennifer Bryan. 2025. readxl: Read Excel Files. https://doi.org/10.32614/CRAN.package.readxl.\n\n\nWickham, Hadley, Romain François, Lionel Henry, Kirill Müller, e Davis Vaughan. 2023. dplyr: A Grammar of Data Manipulation. https://dplyr.tidyverse.org.\n\n\nWickham, Hadley, e Garrett Grolemund. 2017. R for Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz."
+  }
+]
